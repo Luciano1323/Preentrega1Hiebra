@@ -1,12 +1,15 @@
-import React from 'react';
-import Container from './componentes/ItemListContainer';
-import NavBar from './componentes/NavBar';
-import { Icon } from '@chakra-ui/react';
+import React from "react";
+import ItemListContainer from "./componentes/ItemListContainer";
+import NavBar from "./componentes/NavBar";
+import CartWidget from './componentes/CartWidget';
 function App() {
+  const itemCount = 3;
+  const greetingMessage = "Bienvenido a nuestra tienda de café";
   return (
     <div>
       <NavBar />
-      <Container />
+        <CartWidget itemCount={itemCount} />
+      <ItemListContainer greeting={greetingMessage} />
     </div>
   );
 }

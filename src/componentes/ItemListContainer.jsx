@@ -1,23 +1,27 @@
-import React from 'react';
-import { Container } from '@chakra-ui/react';
+import React from "react";
+import { Box, ChakraProvider } from "@chakra-ui/react";
 
-const ItemListContainerComponent = () => {
-  
+const ItemListContainer = ({ greeting }) => {
   return (
-    <Container bg='tomato' w='100%' h='92vh' p={4} color='white' fontSize="2rem" textAlign="center" >
-      <ol style={{ listStyleType: 'none', padding: 0 }}>
-      <li >
-      <h1 >Coffe and Chill</h1>
-      </li>
-      <li>
-      <p>Un lugar sin igual para tomar una merienda</p>
-      </li>
-      <li>
-      <p>Sin lugar a dudas sabemos cual es el mejor cafe para vos</p>
-      </li>
-      </ol>
-    </Container>
+    <ChakraProvider>
+      <Box
+        p={4}
+        bg="#2C241E" 
+        color="white" 
+        h="100vh" 
+        textAlign="center"
+        display="flex"
+        flexDirection="column"
+      >
+        <h1>{greeting}</h1>
+        <ol style={{ listStyleType: "none", padding: 0, margin: 0 }}>
+          <li>Coffe and Chill</li>
+          <li>un lugar donde la maravilla es el cafe</li>
+          <li>el cafe ideal para vos se encuentra en esta tienda</li>
+        </ol>
+      </Box>
+    </ChakraProvider>
   );
 };
 
-export default ItemListContainerComponent;
+export default ItemListContainer;

@@ -1,4 +1,3 @@
-// NavBar.jsx
 import React from "react";
 import {
   Flex,
@@ -51,7 +50,7 @@ const NavBar = () => {
             </Heading>
           </Link>
         </Box>
-        <Box flex="1" textAlign="center">
+        <Box flex="1" textAlign="center" p="1" paddingRight="20">
           <Menu>
             <MenuButton
               as={Button}
@@ -87,7 +86,6 @@ const NavBar = () => {
             </MenuList>
           </Menu>
         </Box>
-        <Menu></Menu>
       </Flex>
     </Box>
   );
