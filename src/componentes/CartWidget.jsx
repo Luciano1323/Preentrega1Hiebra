@@ -4,7 +4,7 @@ import carritoIcon from "../Iconos/carrito.ico";
 
 const CartWidget = ({ itemCount }) => {
   return (
-    <Box position="fixed" top="2" right="2" p="2" zIndex="999">
+    <Box position="absolute" top="2" right="2" p="2" zIndex="999">
       <IconButton
         aria-label="Shopping Cart"
         icon={

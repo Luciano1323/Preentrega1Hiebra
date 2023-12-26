@@ -1,16 +1,16 @@
 import React from "react";
-import ItemListContainer from "./componentes/ItemListContainer";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import NavBar from "./componentes/NavBar";
-import CartWidget from './componentes/CartWidget';
+import ItemListContainer from "./componentes/ItemListContainer";
+
 function App() {
-  const itemCount = 3;
-  const greetingMessage = "Bienvenido a nuestra tienda de café";
   return (
-    <div>
+    <Router>
       <NavBar />
-        <CartWidget itemCount={itemCount} />
-      <ItemListContainer greeting={greetingMessage} />
-    </div>
+      <Routes>
+        <Route path="/cafes" element={<ItemListContainer greeting="Bienvenido a nuestra tienda de café" />} />
+      </Routes>
+    </Router>
   );
 }
 

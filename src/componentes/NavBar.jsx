@@ -1,8 +1,10 @@
 import React from "react";
+import CartWidget from "./CartWidget";
+import { Link as ReactRouterLink } from 'react-router-dom';
 import {
   Flex,
   Box,
-  Link,
+  Link as ChakraLink,
   Icon,
   Heading,
   Menu,
@@ -14,41 +16,26 @@ import {
 import { HamburgerIcon, ChevronDownIcon } from "@chakra-ui/icons";
 
 const NavBar = () => {
-  const boxShadowStyle =
-    "0px 5px 15px 0px rgba(0,0,0,0.75), 0px 0px 10px 0px rgba(0,0,0,0.75)";
   return (
-    <Box boxShadow={boxShadowStyle}>
+    <Box>
       <Flex
         alignItems="center"
         p="4"
         bg="teal.500"
         color="white"
         backgroundColor="black"
-        style={{
-          position: "relative",
-          boxShadow:
-            "0px 5px 15px 0px rgba(0,0,0,0.75), 0px 0px 10px 0px rgba(0,0,0,0.75)",
-          zIndex: 1,
-        }}
       >
         <Box p="2">
-          <Link
-            href="#"
-            fontSize="lg"
-            fontWeight="bold"
-            display="flex"
-            alignItems="center"
-          >
+          {/* Cambiado el atributo 'to' a la ruta de ItemListContainer */}
+          <ReactRouterLink to="/cafes" fontSize="lg" fontWeight="bold" display="flex" alignItems="center">
             <Icon as={HamburgerIcon} boxSize={6} mr={2} />
-            <Heading
-              as="h1"
-              size="md"
-              display="inline-block"
-              verticalAlign="middle"
-            >
-              Coffe and Chill
+            <Heading as="h1" size="md" display="inline-block" verticalAlign="middle">
+              {/* Cambiado el atributo 'to' a la ruta de ItemListContainer */}
+              <ReactRouterLink to="/cafes" style={{ color: "white", textDecoration: "none" }}>
+                Coffe and Chill
+              </ReactRouterLink>
             </Heading>
-          </Link>
+          </ReactRouterLink>
         </Box>
         <Box flex="1" textAlign="center" p="1" paddingRight="20">
           <Menu>
@@ -56,15 +43,16 @@ const NavBar = () => {
               as={Button}
               rightIcon={<ChevronDownIcon />}
               variant="unstyled"
+              px="2"
             >
               Inicio
             </MenuButton>
             <MenuList color="white" backgroundColor="black">
               <MenuItem backgroundColor="black">
-                <Link href="#">Cafes</Link>
+                <ReactRouterLink to="/cafes">Cafes</ReactRouterLink>
               </MenuItem>
               <MenuItem backgroundColor="black">
-                <Link href="#">Tazas</Link>
+                <ChakraLink href="#">Tazas</ChakraLink>
               </MenuItem>
             </MenuList>
           </Menu>
@@ -78,13 +66,14 @@ const NavBar = () => {
             </MenuButton>
             <MenuList backgroundColor="black">
               <MenuItem color="white" backgroundColor="black">
-                <Link href="#">Big Box</Link>
+                <ChakraLink href="#">Big Box</ChakraLink>
               </MenuItem>
               <MenuItem color="white" backgroundColor="black">
-                <Link href="#">Reserva de mesa</Link>
+                <ChakraLink href="#">Reserva de mesa</ChakraLink>
               </MenuItem>
             </MenuList>
           </Menu>
+          <CartWidget itemCount={3} />
         </Box>
       </Flex>
     </Box>
