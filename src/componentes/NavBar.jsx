@@ -1,6 +1,6 @@
 import React from "react";
 import CartWidget from "./CartWidget";
-import { Link as ReactRouterLink } from 'react-router-dom';
+import { Link as ReactRouterLink } from "react-router-dom";
 import {
   Flex,
   Box,
@@ -26,12 +26,24 @@ const NavBar = () => {
         backgroundColor="black"
       >
         <Box p="2">
-          {/* Cambiado el atributo 'to' a la ruta de ItemListContainer */}
-          <ReactRouterLink to="/cafes" fontSize="lg" fontWeight="bold" display="flex" alignItems="center">
+          <ReactRouterLink
+            to="/cafes"
+            fontSize="lg"
+            fontWeight="bold"
+            display="flex"
+            alignItems="center"
+          >
             <Icon as={HamburgerIcon} boxSize={6} mr={2} />
-            <Heading as="h1" size="md" display="inline-block" verticalAlign="middle">
-              {/* Cambiado el atributo 'to' a la ruta de ItemListContainer */}
-              <ReactRouterLink to="/cafes" style={{ color: "white", textDecoration: "none" }}>
+            <Heading
+              as="h1"
+              size="md"
+              display="inline-block"
+              verticalAlign="middle"
+            >
+              <ReactRouterLink
+                to="/cafes"
+                style={{ color: "white", textDecoration: "none" }}
+              >
                 Coffe and Chill
               </ReactRouterLink>
             </Heading>
